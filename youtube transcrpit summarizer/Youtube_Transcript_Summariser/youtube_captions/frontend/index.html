@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript Summarizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube <span class="highlight">Summarizer</span></h1>
+            <p class="subtitle">Transform long videos into concise, readable summaries in seconds</p>
+            <button id="themeToggle" class="theme-toggle">
+                <span class="theme-label">Switch Theme</span>
+            </button>
+            <button id="viewToggle" class="view-toggle">
+                <span class="view-label">Toggle View</span>
+            </button>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <h2>Start Your Summary</h2>
+                <p class="section-desc">Paste your YouTube video URL below to begin</p>
+                <div class="url-input-container">
+                    <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." />
+                    <button id="pasteUrl" class="paste-btn">Paste URL</button>
+                </div>
+            </div>
+
+            <div class="options-section">
+                <div class="summary-length">
+                    <h3>Customize Your Summary</h3>
+                    <p class="option-desc">Choose your preferred summary length</p>
+                    <div class="radio-group">
+                        <label class="option-card">
+                            <input type="radio" name="length" value="brief">
+                            <span class="radio-label">Brief</span>
+                            <span class="option-detail">Key points only</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="length" value="standard" checked>
+                            <span class="radio-label">Standard</span>
+                            <span class="option-detail">Balanced overview</span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="length" value="detailed">
+                            <span class="radio-label">Detailed</span>
+                            <span class="option-detail">In-depth coverage</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="language-section">
+                    <h3>Select Output Language</h3>
+                    <select id="language" class="language-select">
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="marathi">Marathi</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="arabic">Arabic</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="tamil">Tamil</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearBtn" class="secondary-btn">Clear All</button>
+                    <button id="summarizeBtn" class="primary-btn">Generate Summary</button>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="summary">Summary</button>
+                    <button class="tab-btn" data-tab="transcript">Full Transcript</button>
+                    <button class="tab-btn" data-tab="history">History</button>
+                </div>
+                
+                <div class="tab-content" id="resultContent">
+                    <div class="actions">
+                        <!-- Speak Button and Audio Player -->
+                        <div style="display: flex;">
+                            <button id="speakBtn" class="action-btn" style="display: inline-block;">🔊 Speak Summary</button>
+                            <audio id="audioPlayer" style="display:none;margin: auto 0;" controls ></audio>
+                        </div>
+                        <button id="copyBtn" class="action-btn">Copy Text</button>
+                        <button id="saveBtn" class="action-btn">Save as File</button>
+                        <button id="openVideoBtn" class="action-btn">Open Video</button>
+                    </div>
+                    <div class="content-area">
+                        <div id="copyNotification" class="copy-notification" style="display:none;">Content copied to clipboard!</div>
+                        <div id="loader" class="loader hidden"></div>
+                        <div id="result" class="result-text"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="instructions-section">
+            <h2>How to Use</h2>
+            <ol>
+    <li><strong>Copy Video Link:</strong> Go to YouTube and copy the link of the video you want to summarize.</li>
+    <li><strong>Paste Link:</strong> Paste the copied link into the box at the top of this page.</li>
+    <li><strong>Pick Summary Type:</strong> Select how detailed you want your summary to be: <strong>Brief</strong>, <strong>Standard</strong>, or <strong>Detailed</strong>.</li>
+    <li><strong>Choose Language:</strong> Pick your preferred language for the summary.</li>
+    <li><strong>Get Summary:</strong> Click the <strong>Generate Summary</strong> button.</li>
+    <li><strong>View Results:</strong> Check the <strong>Summary</strong> and <strong>Full Transcript</strong> tabs for your results.</li>
+    <li><strong>Save or Share:</strong> Use the <strong>Copy</strong>, <strong>Save as File</strong>, or <strong>Open Video</strong> buttons as needed.</li>
+    <li><strong>See History:</strong> Find your previous summaries in the <strong>History</strong> tab.</li>
+</ol>
+        </section>
+        <footer>
+            <p class="footer-text">Get instant summaries of any YouTube video</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

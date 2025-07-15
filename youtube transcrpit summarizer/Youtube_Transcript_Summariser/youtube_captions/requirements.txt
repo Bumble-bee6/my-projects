@@ -1,0 +1,16 @@
+yt-dlp
+requests
+flask
+flask-cors
+gTTS
+
+transformers>=4.30.0
+torch>=2.0.0
+sentencepiece
+sacremoses
+accelerate
+nltk
+textblob
+wordcloud
+matplotlib
+numpy
